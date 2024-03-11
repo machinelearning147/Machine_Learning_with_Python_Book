@@ -6,4 +6,4 @@ root: intro
 chapters:
 - file: Course_Outline
 - file: 1_Classes 
-- file: notebooks
+# - file: notebooks
