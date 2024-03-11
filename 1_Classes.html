@@ -65,7 +65,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '1_Classes';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
     <link rel="prev" title="Introduction" href="Course_Outline.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -166,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Machine_Learning_with_Python_Book
+                    Machine Learning with Python
                 </a>
             </li>
         </ul>
@@ -174,7 +173,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Course_Outline.html">Introduction</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 </ul>
 
     </div>
@@ -378,7 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -394,6 +394,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studentrecord-example">StudentRecord Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shoppingcart-example">ShoppingCart Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-shopping-cart-example">Online Shopping Cart Example</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -405,6 +415,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-classes">
 <h1>Python Classes<a class="headerlink" href="#python-classes" title="Permalink to this heading">#</a></h1>
+<section id="studentrecord-example">
+<h2>StudentRecord Example<a class="headerlink" href="#studentrecord-example" title="Permalink to this heading">#</a></h2>
 <p>Let’s create a simple problem statement and implement a Python class that covers methods (functions), data types, lists, tuples, dictionaries, and control flow statements.</p>
 <p><strong>Problem Statement:</strong></p>
 <p>Suppose we want to create a class called StudentRecord to store information about students in a school. Each student record should contain the following attributes:</p>
@@ -497,6 +509,9 @@ document.write(`
 <p>This StudentRecord class demonstrates the use of methods (functions) to add grades, update age, add subjects, and add extra-curricular activities.</p>
 <p>It also utilizes various data types such as lists, tuples, and dictionaries to store information about the student.</p>
 <p>Additionally, control flow statements are not explicitly used in this class but could be incorporated within the methods if necessary for error handling or validation.</p>
+</section>
+<section id="shoppingcart-example">
+<h2>ShoppingCart Example<a class="headerlink" href="#shoppingcart-example" title="Permalink to this heading">#</a></h2>
 <p>Let’s see another example.</p>
 <p><strong>Problem Statement:</strong></p>
 <p>Implement a class called ShoppingCart that:</p>
@@ -570,6 +585,9 @@ Total cost after removal: 1050
 </div>
 </div>
 <p>In this example, we’ve created a simple ShoppingCart class that allows adding items to the cart, removing items, and calculating the total cost. This problem is relatable and easy to understand for beginners, making it suitable for learning about Python classes and basic programming concepts.</p>
+</section>
+<section id="online-shopping-cart-example">
+<h2>Online Shopping Cart Example<a class="headerlink" href="#online-shopping-cart-example" title="Permalink to this heading">#</a></h2>
 <p>Let’s add another method to print invoice:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -637,6 +655,7 @@ Total Cost:					$1118.97
 </div>
 <p>This class simulates an online shopping cart, allowing users to add items, calculate the total cost, and print a detailed invoice. It’s a relatable example that demonstrates object-oriented programming principles in a simple and elegant way.</p>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -677,15 +696,6 @@ Total Cost:					$1118.97
         <p class="prev-next-title">Introduction</p>
       </div>
     </a>
-    <a class="right-next"
-       href="notebooks.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content with notebooks</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -693,7 +703,22 @@ Total Cost:					$1118.97
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studentrecord-example">StudentRecord Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shoppingcart-example">ShoppingCart Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-shopping-cart-example">Online Shopping Cart Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
