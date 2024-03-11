@@ -5,5 +5,5 @@ format: jb-book
 root: intro
 chapters:
 - file: Course_Outline
-- file: 1_Classes 
+- file: chapter1/classes 
 # - file: notebooks

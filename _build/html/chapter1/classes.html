@@ -1,0 +1,771 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python Classes &#8212; Machine Learning with Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter1/classes';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Course Outline" href="../Course_Outline.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Machine Learning with Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Machine Learning with Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Machine Learning with Python
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course_Outline.html">Course Outline</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Classes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/machinelearning147/Machine_Learning_with_Python_Book/blob/master/chapter1/classes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/machinelearning147/Machine_Learning_with_Python_Book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/machinelearning147/Machine_Learning_with_Python_Book/issues/new?title=Issue%20on%20page%20%2Fchapter1/classes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter1/classes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python Classes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studentrecord-example">StudentRecord Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shoppingcart-example">ShoppingCart Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-shopping-cart-example">Online Shopping Cart Example</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-classes">
+<h1>Python Classes<a class="headerlink" href="#python-classes" title="Permalink to this heading">#</a></h1>
+<section id="studentrecord-example">
+<h2>StudentRecord Example<a class="headerlink" href="#studentrecord-example" title="Permalink to this heading">#</a></h2>
+<p>Let’s create a simple problem statement and implement a Python class that covers methods (functions), data types, lists, tuples, dictionaries, and control flow statements.</p>
+<p><strong>Problem Statement:</strong></p>
+<p>Suppose we want to create a class called StudentRecord to store information about students in a school. Each student record should contain the following attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>
+<span class="n">Age</span>
+<span class="n">Grades</span> <span class="p">(</span><span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">grades</span> <span class="n">obtained</span> <span class="n">by</span> <span class="n">the</span> <span class="n">student</span><span class="p">)</span>
+<span class="n">Subjects</span> <span class="p">(</span><span class="n">a</span> <span class="nb">tuple</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">subjects</span> <span class="n">the</span> <span class="n">student</span> <span class="ow">is</span> <span class="n">studying</span><span class="p">)</span>
+<span class="n">Extra</span><span class="o">-</span><span class="n">curricular</span> <span class="n">Activities</span> <span class="p">(</span><span class="n">a</span> <span class="n">dictionary</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">activities</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">respective</span> <span class="n">levels</span> <span class="n">of</span> <span class="n">participation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The class should have methods to:</p>
+<ol class="arabic simple">
+<li><p>Initialize a student record with default values.</p></li>
+<li><p>Add a new grade to the student’s grades list.</p></li>
+<li><p>Update the student’s age.</p></li>
+<li><p>Add a new subject to the student’s list of subjects.</p></li>
+<li><p>Add a new extra-curricular activity with its level of participation.</p></li>
+</ol>
+<p>Let’s implement the StudentRecord class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">StudentRecord</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">grades</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subjects</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">activities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grades</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">grades</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">grades</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subjects</span> <span class="o">=</span> <span class="p">()</span> <span class="k">if</span> <span class="n">subjects</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">subjects</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">activities</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">activities</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">activities</span>
+
+    <span class="k">def</span> <span class="nf">add_grade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grade</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grades</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">new_age</span>
+
+    <span class="k">def</span> <span class="nf">add_subject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subject</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subjects</span> <span class="o">+=</span> <span class="p">(</span><span class="n">subject</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">add_activity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">activity</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">activities</span><span class="p">[</span><span class="n">activity</span><span class="p">]</span> <span class="o">=</span> <span class="n">level</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example usage:</span>
+<span class="n">student1</span> <span class="o">=</span> <span class="n">StudentRecord</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">grades</span><span class="o">=</span><span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">92</span><span class="p">],</span> <span class="n">subjects</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="s2">&quot;Science&quot;</span><span class="p">),</span> <span class="n">activities</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Sports&quot;</span><span class="p">:</span> <span class="s2">&quot;High&quot;</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">grades</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">subjects</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">activities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice
+15
+[85, 90, 92]
+(&#39;Math&#39;, &#39;Science&#39;)
+{&#39;Sports&#39;: &#39;High&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span><span class="o">.</span><span class="n">add_grade</span><span class="p">(</span><span class="mi">88</span><span class="p">)</span>
+<span class="n">student1</span><span class="o">.</span><span class="n">update_age</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">student1</span><span class="o">.</span><span class="n">add_subject</span><span class="p">(</span><span class="s2">&quot;English&quot;</span><span class="p">)</span>
+<span class="n">student1</span><span class="o">.</span><span class="n">add_activity</span><span class="p">(</span><span class="s2">&quot;Music&quot;</span><span class="p">,</span> <span class="s2">&quot;Intermediate&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">grades</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">subjects</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">activities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[85, 90, 92, 88]
+16
+(&#39;Math&#39;, &#39;Science&#39;, &#39;English&#39;)
+{&#39;Sports&#39;: &#39;High&#39;, &#39;Music&#39;: &#39;Intermediate&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>This StudentRecord class demonstrates the use of methods (functions) to add grades, update age, add subjects, and add extra-curricular activities.</p>
+<p>It also utilizes various data types such as lists, tuples, and dictionaries to store information about the student.</p>
+<p>Additionally, control flow statements are not explicitly used in this class but could be incorporated within the methods if necessary for error handling or validation.</p>
+</section>
+<section id="shoppingcart-example">
+<h2>ShoppingCart Example<a class="headerlink" href="#shoppingcart-example" title="Permalink to this heading">#</a></h2>
+<p>Let’s see another example.</p>
+<p><strong>Problem Statement:</strong></p>
+<p>Implement a class called ShoppingCart that:</p>
+<p>Initializes with an empty list of items and a total cost of zero.
+Provides methods to add items to the cart, remove items, and calculate the total cost of all items in the cart.</p>
+<p><strong>Class Structure:</strong></p>
+<p>Initialize the class with an empty list of items (cart) and a total cost (total_cost).</p>
+<p>Provide a method to add items to the cart, where each item is represented by a dictionary containing its name and price.</p>
+<p>Provide a method to remove items from the cart by specifying their name.</p>
+<p>Provide a method to calculate the total cost of all items in the cart.</p>
+<p>Here’s an outline of the ShoppingCart class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShoppingCart</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cart</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># List of items in the cart</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_cost</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Total cost of all items in the cart</span>
+
+    <span class="k">def</span> <span class="nf">add_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_name</span><span class="p">,</span> <span class="n">item_price</span><span class="p">):</span>
+        <span class="c1"># Add an item to the cart</span>
+        <span class="c1"># item_name: Name of the item</span>
+        <span class="c1"># item_price: Price of the item</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">item_name</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">item_price</span><span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_cost</span> <span class="o">+=</span> <span class="n">item_price</span>
+
+    <span class="k">def</span> <span class="nf">remove_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_name</span><span class="p">):</span>
+        <span class="c1"># Remove an item from the cart by specifying its name</span>
+        <span class="c1"># item_name: Name of the item to be removed</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">item_name</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">total_cost</span> <span class="o">-=</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="k">break</span>
+
+    <span class="k">def</span> <span class="nf">calculate_total_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Calculate the total cost of all items in the cart</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">total_cost</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s provide an example usage of this class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example usage:</span>
+<span class="n">cart</span> <span class="o">=</span> <span class="n">ShoppingCart</span><span class="p">()</span>
+
+<span class="c1"># Add items to the cart</span>
+<span class="n">cart</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">cart</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="s2">&quot;Mouse&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">cart</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="s2">&quot;Keyboard&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Calculate total cost</span>
+<span class="n">total_cost</span> <span class="o">=</span> <span class="n">cart</span><span class="o">.</span><span class="n">calculate_total_cost</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total cost:&quot;</span><span class="p">,</span> <span class="n">total_cost</span><span class="p">)</span>
+
+<span class="c1"># Remove an item from the cart</span>
+<span class="n">cart</span><span class="o">.</span><span class="n">remove_item</span><span class="p">(</span><span class="s2">&quot;Mouse&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate total cost again</span>
+<span class="n">total_cost_after_removal</span> <span class="o">=</span> <span class="n">cart</span><span class="o">.</span><span class="n">calculate_total_cost</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total cost after removal:&quot;</span><span class="p">,</span> <span class="n">total_cost_after_removal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total cost: 1070
+Total cost after removal: 1050
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, we’ve created a simple ShoppingCart class that allows adding items to the cart, removing items, and calculating the total cost. This problem is relatable and easy to understand for beginners, making it suitable for learning about Python classes and basic programming concepts.</p>
+</section>
+<section id="online-shopping-cart-example">
+<h2>Online Shopping Cart Example<a class="headerlink" href="#online-shopping-cart-example" title="Permalink to this heading">#</a></h2>
+<p>Let’s add another method to print invoice:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">OnlineShoppingCart</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Initialize an empty cart</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cart</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">add_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_name</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">price_per_unit</span><span class="p">):</span>
+        <span class="c1"># Add an item to the cart</span>
+        <span class="c1"># item_name: Name of the item</span>
+        <span class="c1"># quantity: Quantity of the item</span>
+        <span class="c1"># price_per_unit: Price per unit of the item</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">item_name</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">price_per_unit</span><span class="p">))</span>     
+
+    <span class="k">def</span> <span class="nf">calculate_total_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Calculate the total cost of all items in the cart</span>
+        <span class="n">total_cost</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
+            <span class="n">total_cost</span> <span class="o">+=</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># quantity * price_per_unit</span>
+        <span class="k">return</span> <span class="n">total_cost</span>
+
+    <span class="k">def</span> <span class="nf">print_invoice</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Print a detailed invoice showing each item, quantity, price, and total cost</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;********** Invoice **********&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item</span><span class="se">\t\t</span><span class="s2">Quantity</span><span class="se">\t</span><span class="s2">Price</span><span class="se">\t\t</span><span class="s2">Total Cost&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
+            <span class="n">item_name</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">price_per_unit</span> <span class="o">=</span> <span class="n">item</span>
+            <span class="n">total_cost</span> <span class="o">=</span> <span class="n">quantity</span> <span class="o">*</span> <span class="n">price_per_unit</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item_name</span><span class="si">}</span><span class="se">\t\t</span><span class="si">{</span><span class="n">quantity</span><span class="si">}</span><span class="se">\t\t</span><span class="s2">$</span><span class="si">{</span><span class="n">price_per_unit</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\t\t</span><span class="s2">$</span><span class="si">{</span><span class="n">total_cost</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Cost:</span><span class="se">\t\t\t\t\t</span><span class="s2">$</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">calculate_total_cost</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*****************************&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example usage:</span>
+<span class="n">cart</span> <span class="o">=</span> <span class="n">OnlineShoppingCart</span><span class="p">()</span>
+
+<span class="c1"># Add items to the cart</span>
+<span class="n">cart</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">999</span><span class="p">)</span>
+<span class="n">cart</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="s2">&quot;Pen&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">49.99</span><span class="p">)</span>
+<span class="n">cart</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="s2">&quot;Book&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">19.99</span><span class="p">)</span>
+
+<span class="c1"># Print the detailed invoice</span>
+<span class="n">cart</span><span class="o">.</span><span class="n">print_invoice</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>********** Invoice **********
+Item		Quantity	Price		Total Cost
+Laptop		1		$999.00		$999.00
+Pen		2		$49.99		$99.98
+Book		1		$19.99		$19.99
+-----------------------------
+Total Cost:					$1118.97
+*****************************
+</pre></div>
+</div>
+</div>
+</div>
+<p>This class simulates an online shopping cart, allowing users to add items, calculate the total cost, and print a detailed invoice. It’s a relatable example that demonstrates object-oriented programming principles in a simple and elegant way.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "mybook"
+        },
+        kernelOptions: {
+            name: "mybook",
+            path: "./chapter1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'mybook'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Course_Outline.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Course Outline</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studentrecord-example">StudentRecord Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shoppingcart-example">ShoppingCart Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-shopping-cart-example">Online Shopping Cart Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shravan Kumar Parunandula
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
