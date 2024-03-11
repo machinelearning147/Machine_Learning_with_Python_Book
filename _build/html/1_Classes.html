@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Machine Learning with Python</title>
+    <title>Python Classes &#8212; Machine Learning with Python</title>
   
   
   
@@ -170,9 +170,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course_Outline.html">Introduction</a></li>
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 </ul>
 
@@ -377,9 +378,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -390,19 +389,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Python Classes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -412,7 +403,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Let’s create a simple problem statement and implement a Python class that covers methods (functions), data types, lists, tuples, dictionaries, and control flow statements.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-classes">
+<h1>Python Classes<a class="headerlink" href="#python-classes" title="Permalink to this heading">#</a></h1>
+<p>Let’s create a simple problem statement and implement a Python class that covers methods (functions), data types, lists, tuples, dictionaries, and control flow statements.</p>
 <p><strong>Problem Statement:</strong></p>
 <p>Suppose we want to create a class called StudentRecord to store information about students in a school. Each student record should contain the following attributes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>
@@ -590,7 +583,7 @@ Total cost after removal: 1050
         <span class="c1"># item_name: Name of the item</span>
         <span class="c1"># quantity: Quantity of the item</span>
         <span class="c1"># price_per_unit: Price per unit of the item</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">item_name</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">price_per_unit</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">item_name</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">price_per_unit</span><span class="p">))</span>     
 
     <span class="k">def</span> <span class="nf">calculate_total_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Calculate the total cost of all items in the cart</span>
@@ -643,6 +636,7 @@ Total Cost:					$1118.97
 </div>
 </div>
 <p>This class simulates an online shopping cart, allowing users to add items, calculate the total cost, and print a detailed invoice. It’s a relatable example that demonstrates object-oriented programming principles in a simple and elegant way.</p>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -653,16 +647,16 @@ Total Cost:					$1118.97
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "mybook"
         },
         kernelOptions: {
-            name: "python3",
+            name: "mybook",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'mybook'</script>
 
                 </article>
               
@@ -699,20 +693,7 @@ Total Cost:					$1118.97
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
