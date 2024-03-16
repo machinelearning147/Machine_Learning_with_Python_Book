@@ -6,4 +6,4 @@ root: intro
 chapters:
 - file: Course_Outline
 - file: chapter1/classes 
-# - file: notebooks
+- file: chapter1/controlflow_statements
