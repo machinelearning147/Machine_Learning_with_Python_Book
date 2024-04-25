@@ -4,7 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-sections:
 - file: Course_Outline
   title: Course Outline
 - file: chapter1/classes 
