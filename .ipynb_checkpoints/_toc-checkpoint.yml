@@ -4,6 +4,10 @@
 format: jb-book
 root: intro
 chapters:
+sections:
 - file: Course_Outline
+  title: Course Outline
 - file: chapter1/classes 
+  title: Classes
 - file: chapter1/controlflow_statements
+  title: Control Flow Statements
