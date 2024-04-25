@@ -7,11 +7,13 @@ parts:
   - chapters:
     - file: Course_Outline
       title: Course Outline
+    - file: chapter1/intro
+      title: Introduction
+      sections: 
+        - file: chapter1/classes 
+          title: Classes
+        - file: chapter1/controlflow_statements
+          title: Control Flow Statements
       
-    - file: chapter1/classes 
-      title: Classes
-    - file: chapter1/controlflow_statements
-      title: Control Flow Statements
-      
-    - title: Chapter2
-      file: chapter2/intro
+    - file: chapter2/intro
+      title: Introduction
