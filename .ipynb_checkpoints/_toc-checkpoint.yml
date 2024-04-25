@@ -1,21 +1,9 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
 parts:
-  - chapters:
-    - file: Course_Outline
-      title: Course Outline
-    - file: chapter1/intro
-      title: Chapter 1
-      sections: 
-        - file: chapter1/classes 
-          title: Classes
-        - file: chapter1/controlflow_statements
-          title: Control Flow Statements
-    - file: chapter2/intro
-      title: Chapter 2
-      sections:
-        - file: chapter2/Numpy
-          title: Numpy
+  - title: Course Outline
+    chapters:
+      - title: Course Outline
+        file: Course_Outline
