@@ -8,7 +8,7 @@ parts:
     - file: Course_Outline
       title: Course Outline
     - file: chapter1/intro
-      title: Introduction
+      title: Chapter 1
       sections: 
         - file: chapter1/classes 
           title: Classes
@@ -16,4 +16,7 @@ parts:
           title: Control Flow Statements
       
     - file: chapter2/intro
-      title: Introduction
+      title: Chapter 2
+      sections:
+        - file: chapter2/Numpy
+          title: Numpy
