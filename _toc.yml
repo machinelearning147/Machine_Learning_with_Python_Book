@@ -14,7 +14,6 @@ parts:
           title: Classes
         - file: chapter1/controlflow_statements
           title: Control Flow Statements
-      
     - file: chapter2/intro
       title: Chapter 2
       sections:
