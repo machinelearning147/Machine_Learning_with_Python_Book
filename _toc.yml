@@ -1,14 +1,39 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
 format: jb-book
 root: index.md
 parts:
-- caption: Course Outline
-  numbered: true
-  chapters:
-    - file: Course_Outline 
-- caption: Chapter 1 Introduction to Python Libraries for Machine Learning
-  chapters:
-    - file: chapter1/intro
-    - file: chapter1/classes
-    - file: chapter1/controlflow_statements
+  - title: Course Outline
+    caption: Course Outline
+    numbered: true
+    chapters:
+      - title: Introduction
+        file: Course_Outline 
+
+  - title: Chapter 1 Introduction to Python Libraries for Machine Learning
+    caption: Chapter 1 Introduction to Python Libraries for Machine Learning
+    chapters:
+      - title: Introduction
+        file: chapter1/intro
+      - title: Classes
+        file: chapter1/classes
+      - title: Control Flow Statements
+        file: chapter1/controlflow_statements
+        
+  - title: Chapter 2 Exploring Python Libraries for Machine Learning
+    caption: Chapter 2 Exploring Python Libraries for Machine Learning
+    chapters:
+      - title: Introduction
+        file: chapter2/intro
+      - title: NumPy - The Foundation for Numerical Computing
+        file: chapter2/Numpy
+      - title: pandas - Data Manipulation Made Easy
+        file: chapter2/pandas
+      - title: Matplotlib - Visualizing Insights
+        file: chapter2/matplotlib
+      - title: scikit-learn - Machine Learning Made Accessible
+        file: chapter2/scikit-learn
+      - title: Conclusion
+        file: chapter2/conclusion
