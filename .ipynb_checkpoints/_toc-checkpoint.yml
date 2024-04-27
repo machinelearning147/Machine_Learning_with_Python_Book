@@ -37,3 +37,8 @@ parts:
         file: chapter2/scikit-learn
       - title: Conclusion
         file: chapter2/conclusion
+  - title: Chapter 4 Exploring Advanced Architectures
+    caption: Chapter 4 Exploring Advanced Architectures
+    chapters:
+      - title: DINO-v2
+        file: chapter4/01.dino_v2_asic_usage
