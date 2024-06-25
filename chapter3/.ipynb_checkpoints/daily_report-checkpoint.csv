@@ -1,0 +1,6 @@
+date,original_image_url,model_output_url,manual_clean_url
+2024-04-25,https://example.com/images/image1.jpg,https://example.com/model_output/output1.jpg,https://example.com/manual_clean/clean1.jpg
+2024-04-25,https://example.com/images/image2.jpg,https://example.com/model_output/output2.jpg,
+2024-04-26,https://example.com/images/image3.jpg,https://example.com/model_output/output3.jpg,https://example.com/manual_clean/clean3.jpg
+2024-04-26,https://example.com/images/image4.jpg,https://example.com/model_output/output4.jpg,
+2024-04-27,https://example.com/images/image5.jpg,https://example.com/model_output/output5.jpg,https://example.com/manual_clean/clean5.jpg
